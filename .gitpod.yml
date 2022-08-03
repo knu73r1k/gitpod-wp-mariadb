@@ -1,6 +1,10 @@
 image:
   file: .gitpod.Dockerfile
 
+tasks:
+  - name: Start containers
+    command: |
+      docker-compose up -d
 
 ports:
   - name: Web App
