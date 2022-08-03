@@ -1,7 +1,6 @@
-tasks:
-  - name: Start containers (Wordpress and MariaDB)
-    init: |
-      docker-compose up -d
+image:
+  file: .gitpod.Dockerfile
+
 
 ports:
   - name: Web App
