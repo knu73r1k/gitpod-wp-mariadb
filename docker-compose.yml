@@ -23,4 +23,5 @@ services:
         ports:
             - "8080:80"
         volumes:
-            - ./mythemes:/var/www/html/wp-content/themes 
+            - ./mythemes:/var/www/html/wp-content/themes
+            - ./myplugins:/var/www/html/wp-content/plugins 
