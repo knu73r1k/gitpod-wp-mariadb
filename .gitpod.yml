@@ -5,6 +5,8 @@ tasks:
 
   - name: Wait for WP to be ready
     command: |
+      gp ports await 3306
+      gp ports await 33060
       gp ports await 8080
 
 ports:
