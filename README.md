@@ -1,3 +1,5 @@
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/knut-erik/gitpod-wp-mariadb)
+
 # Gitpod + Wordpress + MariaDB
 
 This repository is just an example how you can use Gitpod for developing themes, or plugins for Wordpress (+MariaDB as DB).
