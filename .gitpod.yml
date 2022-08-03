@@ -1,0 +1,10 @@
+tasks:
+  - name: Start containers (Wordpress and MariaDB)
+    command: |
+      docker-compose up -d
+ports:
+  - name: Web App
+    description: The main application web server
+    port: 8080
+    onOpen: open-preview
+    visibility: private

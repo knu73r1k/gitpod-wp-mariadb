@@ -1,0 +1,25 @@
+version: '3.7'
+services:  
+    wp:
+        image: wordpress
+        environment:
+            - WORDPRESS_DB_HOST=db
+            - WORDPRESS_DB_USER=wpuser
+            - WORDPRESS_DB_PASSWORD=password
+            - WORDPRESS_DB_NAME=wpdatabase
+        ports:
+            - "8080:80"
+        volumes:
+            - ./mythemes:/var/www/html/wp-content/themes 
+    db:
+        image: mariadb:10.7
+        ports:
+            - "3306:3306"
+            - "33060:33060"
+        environment:
+            - MYSQL_ROOT_PASSWORD=password
+            - MYSQL_DATABASE=wpdatabase
+            - MYSQL_USER=wpuser
+            - MYSQL_PASSWORD=password
+        #volumes:
+        #    - ./dbfiles:/var/lib/mysql
