@@ -1,10 +1,14 @@
 tasks:
   - name: Start containers (Wordpress and MariaDB)
-    command: |
+    init: |
       docker-compose up -d
+
+  - name: Wait for WP to be ready
+    command: |
+      gp ports await 8080
+
 ports:
   - name: Web App
-    description: The main application web server
     port: 8080
     onOpen: open-preview
     visibility: private
