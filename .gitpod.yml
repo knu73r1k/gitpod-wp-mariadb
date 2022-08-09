@@ -5,7 +5,10 @@ tasks:
   - name: Start containers
     command: |
       docker-compose up -d
-      gp ports await 8080
+      gp sync-done containers 
+  - name: Change ownership of themes and plugins directory
+    command: |
+      gp sync-await containers # Wait for the container task
       sudo chown gitpod:gitpod ./mythemes/.
       sudo chown gitpod:gitpod ./myplugins/.
 ports:
