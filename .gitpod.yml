@@ -5,8 +5,9 @@ tasks:
   - name: Start containers
     command: |
       docker-compose up -d
-      chown gitpod:gitpod ./mythemes/.
-      chown gitpod:gitpod ./myplugins/.
+      gp ports await 8080
+      sudo chown gitpod:gitpod ./mythemes/.
+      sudo chown gitpod:gitpod ./myplugins/.
 ports:
   - name: Web App
     port: 8080
