@@ -2,10 +2,15 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
+  - name: install plugins
+    command: |
+      wget -q -O tmp.zip https://downloads.wordpress.org/plugin/duplicate-post.4.5.zip  && unzip -d ./myplugins tmp.zip && rm tmp.zip
+      wget -q -O tmp.zip https://downloads.wordpress.org/plugin/classic-editor.1.6.2.zip  && unzip -d ./myplugins tmp.zip && rm tmp.zip
+      wget -q -O tmp.zip https://downloads.wordpress.org/plugin/classic-widgets.0.3.zip  && unzip -d ./myplugins tmp.zip && rm tmp.zip
   - name: Start containers
     command: |
       docker-compose up -d
-      gp sync-done containers 
+      gp sync-done containers
   - name: Change ownership of themes and plugins directory
     command: |
       gp sync-await containers # Wait for the container task
